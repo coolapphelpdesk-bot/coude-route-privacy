@@ -65,10 +65,11 @@
   <h2>1. Summary</h2>
   <p>Code de la Route Maroc (&ldquo;the app&rdquo;) is an offline study aid for the Moroccan driving theory test, published by <strong>Cool App Helpdesk</strong>.</p>
   <ul>
-    <li>The app <strong>collects no personal data</strong>. There is no account and no sign-in.</li>
-    <li>The app holds <strong>no Internet permission</strong>, so it cannot send your information anywhere. All signs, questions, images and videos are bundled inside the app.</li>
+    <li>The developer <strong>collects no personal data</strong>. There is no account and no sign-in.</li>
+    <li>All signs, questions, images and videos are bundled inside the app, so studying works offline.</li>
+    <li>The app contains <strong>advertising</strong> through Google AdMob: one banner on the Home and Learn screens, never during a quiz or mock exam. Ads are switched off until <strong>1 September 2027</strong>; until then the AdMob SDK is not started and collects nothing.</li>
     <li>Your learning progress and settings are stored <strong>only in the app&rsquo;s private storage on your device</strong>.</li>
-    <li>There are <strong>no ads, no analytics, no crash-reporting SDKs and no social SDKs</strong> in the app.</li>
+    <li>There are <strong>no analytics, crash-reporting or social SDKs</strong> in the app.</li>
     <li>Links to official sources, sign credits and this policy open in your browser. Those websites have their own privacy policies.</li>
     <li>The <em>Listen</em> button uses the text-to-speech engine already installed on your device. The app sends it only the text you asked it to read.</li>
   </ul>
@@ -76,8 +77,17 @@
 
 <section class="card">
   <h2>2. Data we collect</h2>
-  <p>The developer <strong>collects nothing</strong> from this app. The app does not collect your name, email address, phone number, contacts, location, photos, files, device identifiers, advertising ID or usage statistics, and it has no server of its own.</p>
-  <p>Because the app has no Internet permission, there is no channel through which it could transmit data. Nothing is sold or shared, because nothing is collected.</p>
+  <p>The developer (<strong>Cool App Helpdesk</strong>) <strong>collects nothing</strong> from this app. It does not collect your name, email address, phone number, contacts, location, photos, files or usage statistics, and it has no server of its own.</p>
+  <p>Once ads are switched on (from 1 September 2027), the <strong>Google AdMob SDK</strong> in the app may collect the following to show and measure ads:</p>
+  <table>
+    <thead><tr><th>Data</th><th>Purpose</th><th>Collected by</th></tr></thead>
+    <tbody>
+      <tr><td>Advertising ID</td><td>Serve personalised or non-personalised ads</td><td>Google AdMob</td></tr>
+      <tr><td>Device and app information, ad interactions</td><td>Ad delivery, measurement and fraud prevention</td><td>Google AdMob</td></tr>
+      <tr><td>IP address (approximate location)</td><td>Ad targeting and fraud prevention</td><td>Google AdMob</td></tr>
+    </tbody>
+  </table>
+  <p>This data is handled by Google under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from sites or apps that use its services</a>. The developer has no access to it. You can reset or delete your advertising ID, or opt out of personalised ads, in <em>Android Settings &rarr; Google &rarr; Ads</em> (or <em>Settings &rarr; Privacy &rarr; Ads</em>).</p>
 </section>
 
 <section class="card">
@@ -100,11 +110,12 @@
 
 <section class="card">
   <h2>4. Permissions used</h2>
-  <p>The app requests <strong>no Android permissions at all</strong>. It does not ask for location, storage, camera, microphone, contacts, notifications or network access.</p>
+  <p>The app asks for <strong>no runtime permissions</strong>. It does not ask for location, storage, camera, microphone, contacts or notifications. It declares only the normal permissions the advertising SDK needs:</p>
   <table>
     <thead><tr><th>Permission</th><th>Reason</th><th>When asked</th></tr></thead>
     <tbody>
-      <tr><td><em>None</em></td><td>The app only reads the content bundled with it and writes to its own private storage, which needs no permission.</td><td>Never</td></tr>
+      <tr><td><code>INTERNET</code> + <code>ACCESS_NETWORK_STATE</code></td><td>Load advertisements through Google AdMob (from 1 September 2027). Study content never uses the network.</td><td>Auto-granted (normal permission)</td></tr>
+      <tr><td><code>com.google.android.gms.permission.AD_ID</code></td><td>Lets AdMob read the advertising ID to serve ads (added by the AdMob SDK).</td><td>Auto-granted (normal permission)</td></tr>
     </tbody>
   </table>
   <p class="muted">Opening a link hands the address to your browser through a standard Android intent; the app never loads the page itself. The <em>Listen</em> button asks the system for a text-to-speech engine in the same way.</p>
@@ -112,7 +123,7 @@
 
 <section class="card">
   <h2>5. Network activity and third parties</h2>
-  <p>The app makes <strong>no network requests</strong>. It has no Internet permission and contains no advertising, analytics, crash-reporting, tracking or social SDK. Its only third-party libraries are general-purpose Android libraries (user interface, local database, media playback), and they run entirely on your device.</p>
+  <p>All study content is bundled in the app; it makes <strong>no network requests of its own</strong> and sends nothing to the developer. The one exception is advertising: the app integrates <strong>Google AdMob</strong>, which, once ads are switched on from 1 September 2027, contacts Google&rsquo;s ad servers to load a banner on the Home and Learn screens. AdMob may collect the data listed in section 2. Before that date the AdMob SDK is not started and makes no requests. The app contains no analytics, crash-reporting, tracking or social SDK; its other libraries (user interface, local database, media playback) run entirely on your device.</p>
   <p><strong>Links.</strong> The following open in your browser when you tap them:</p>
   <ul>
     <li>Official Moroccan legal texts listed under <em>More &rarr; About</em>, hosted on official government websites (<a href="http://www.sgg.gov.ma/">sgg.gov.ma</a> and <a href="https://www.equipement.gov.ma/">equipement.gov.ma</a>);</li>
@@ -125,7 +136,7 @@
 
 <section class="card">
   <h2>6. Children&rsquo;s privacy</h2>
-  <p>The app is a general-purpose study aid for learner drivers and is not directed at children under 13. We do not knowingly collect personal information from anyone, including children. Because the app collects no data at all, there is nothing for a parent or guardian to review or delete beyond the local progress described in section 7.</p>
+  <p>The app is a general-purpose study aid for learner drivers and is not directed at children under 13. The developer does not knowingly collect personal information from anyone, including children, and holds no data to review or delete beyond the local progress described in section 7. Ad data handled by Google AdMob (section 2) is governed by Google&rsquo;s policies.</p>
 </section>
 
 <section class="card">
@@ -140,7 +151,7 @@
 
 <section class="card">
   <h2>8. Security</h2>
-  <p>Local data is protected by Android&rsquo;s app sandbox: other apps cannot read the app&rsquo;s private storage without root access. The app has no network permission, so your progress and settings cannot be transmitted by it. If Android&rsquo;s backup service is enabled, the backup copy is encrypted by Google in transit and at rest under Google&rsquo;s own security practices.</p>
+  <p>Local data is protected by Android&rsquo;s app sandbox: other apps cannot read the app&rsquo;s private storage without root access. The app never transmits your progress or settings; its only network traffic is AdMob ad requests (from 1 September 2027), which use HTTPS. If Android&rsquo;s backup service is enabled, the backup copy is encrypted by Google in transit and at rest under Google&rsquo;s own security practices.</p>
 </section>
 
 <section class="card">
